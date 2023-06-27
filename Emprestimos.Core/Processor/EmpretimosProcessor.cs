@@ -6,6 +6,11 @@ namespace Empretimos.Core.Processor
     {
         public EmprestimosResult LerDados(EmpretimosReq req)
         {
+
+            if(req is null)
+            {
+                throw new ArgumentNullException(nameof(req));
+            }
             return new EmprestimosResult
             {
                 Data = req.Data,
